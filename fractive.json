@@ -1,0 +1,49 @@
+{
+    "title": "Stream of Pretentiousness",
+    "author": "Nat Quayle Nelson",
+    "description": "An open-source interactive nonfiction game written in SpaceFractive.",
+    "website": "nqn.itch.io/stream-of-pretentiousness",
+    "twitter": "",
+    "markdown": [
+        "source/**/*.md"
+    ],
+    "javascript": [
+        "source/**/*.js"
+    ],
+    "assets": [
+        "assets/**"
+    ],
+    "ignore": [],
+    "aliases": [],
+    "template": "template.html",
+    "output": "build",
+    "outputFormat": "prettify",
+    "linkTooltips": false,
+    "linkTags": {
+        "external": {
+            "html": "",
+            "prepend": false
+        },
+        "inline": {
+            "html": "",
+            "prepend": false
+        },
+        "section": {
+            "html": "",
+            "prepend": false
+        },
+        "function": {
+            "html": "",
+            "prepend": false
+        }
+    },
+	"phaserArguments": {
+		"width": 800,
+		"height": 480,
+		"transparent": true
+	},
+    "includeBackButton": true,
+    "backButtonHtml": "Back",
+    "hardLineBreaks": true,
+    "smartPunctuation": true
+}
