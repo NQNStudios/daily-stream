@@ -5,6 +5,14 @@
 		<!--{opengraph}-->
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"></link>
 		<style>
+      #__phaser
+      {
+        position: fixed;
+        top: 75px;
+        left: 0px;
+        width: 800px;
+        height: 480px;
+      }
 			#__controls
 			{
 				position: fixed;
@@ -65,19 +73,16 @@
 			}
 			#__content
 			{
-				position: absolute;
-				top: 75px;
-				left: 0px;
-				width: 100%;
 				overflow: auto;
 			}
 			#__currentSection
 			{
+        position: absolute;
+        top: 75px;
+        left: 350px;
 				color: #555555;
 				animation: 1s textFadeIn;
 				max-width: 900px;
-				margin-left: auto;
-				margin-right: auto;
 			}
 			@keyframes textFadeIn
 			{
@@ -167,36 +172,9 @@
 			{
 				location.reload();
 			}
-			function __ToggleHistory()
-			{
-				var historyContainerDiv = document.getElementById("__historyContainer");
-				if(!historyContainerDiv) { return; }
-
-				var historyDiv = document.getElementById("__history");
-				if(!historyDiv) { return; }
-
-				var contentDiv = document.getElementById("__content");
-				if(!contentDiv) { return; }
-
-				// Toggle history visibility
-				historyContainerDiv.hidden = !historyContainerDiv.hidden;
-				historyDiv.hidden = historyContainerDiv.hidden;
-
-				// Scroll to bottom of history
-				historyContainerDiv.scrollTop = historyContainerDiv.scrollHeight;
-
-				// Adjust content position relative to history panel
-				var contentTop = 75 + (historyContainerDiv.hidden ? 0 : 425);
-				contentDiv.style.setProperty("top", contentTop);
-				contentDiv.style.setProperty("height", window.innerHeight - contentTop);
-			}
 			Core.AddEventListener("OnGotoSection", function(id, element, tags, reason)
 			{
-				// Scroll to bottom of history
-				var historyContainerDiv = document.getElementById("__historyContainer");
-				if(historyContainerDiv) { historyContainerDiv.scrollTop = historyContainerDiv.scrollHeight; }
-
-				// Scroll to top of new content
+        // Scroll to top of new content
 				var contentDiv = document.getElementById("__content");
 				if(contentDiv) { contentDiv.scrollTop = 0; }
 			});
@@ -205,6 +183,7 @@
 	<body>
 		<div id="__content">
 			<!--{story}-->
+      <div id="__phaser"></div>
 			<div id="__currentSection">
 				<noscript>
 					<h1>Oh no!</h1>
