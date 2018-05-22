@@ -618,7 +618,12 @@
 
         // Load assets
         function __preload() {
+            phaser.load.image('cover', 'assets/itch-cover.jpeg');
             phaser.load.image('bunk', 'assets/bunk.jpg');
+            phaser.load.image('no-fap-nat', 'assets/no-fap-nat.png');
+            phaser.load.image('no-fap', 'assets/no-fap.png');
+            phaser.load.image('what-to-do', 'assets/what-to-do.png');
+            phaser.load.image('what-i-did', 'assets/what-i-did.png');
         }
 
         // New section event: if a section has the Sprite tag, add the sprite to the
@@ -629,11 +634,12 @@
             }
 
             var index = tags.indexOf('Sprite');
+            var spriteKey = 'cover';
             if (index != -1) {
-                var spriteKey = tags[index + 1];
-
-                window['sprite'] = phaser.add.sprite(0, 0, spriteKey);
+                spriteKey = tags[index + 1];
             }
+
+            window['sprite'] = phaser.add.sprite(0, 0, spriteKey);
 
             index = tags.indexOf('Scale');
             var scale = 1;
@@ -675,28 +681,45 @@
 
 <body>
     <div id="__content">
-        <!-- source/day1.md -->
-        <div id="5/22" data-tags="S2" class="section" hidden="true">
+        <!-- source/day01.md -->
+        <div id="5/22/18" data-tags="S2" class="section" hidden="true">
             <p>I’m back in New York City! This is the place where I first decided to start making Stream of Pretentiousness. Let me set the tone of [TODO the game/my life] by telling you an <a title="" href="javascript:;" data-goto-section="Day1-Anecdote">anecdote</a>                about moving here.</p>
         </div>
         <div id="Day1-Anecdote" data-tags="Sprite,bunk,Scale,0.3" class="section" hidden="true">
             <p>I’m only here for the next 3 months, and on a tight budget. I live in a shared bedroom with a total of 6 beds. I’m top bunk on the left, and I don’t get much <a title="" href="javascript:;" data-goto-section="Day1-AloneTime">privacy</a>.</p>
         </div>
-        <div id="Day1-AloneTime" data-tags="" class="section" hidden="true">
-            <p>There’s a group chat where I talk about very important topics.</p>
-            <p>(TODO introducing no-fap Nat)</p>
+        <div id="Day1-AloneTime" data-tags="Sprite,no-fap-nat" class="section" hidden="true">
+            <p>Luckily I have an important group chat where I can <a title="" href="javascript:;" data-goto-section="Day1-Talk">talk about</a> what happens to my bodily functions without privacy.</p>
+        </div>
+        <div id="Day1-Talk" data-tags="Sprite,no-fap" class="section" hidden="true">
+            <p>Things were starting to get <a title="" href="javascript:;" data-goto-section="Day1-WhatToDo">out of hand</a>. I sat down to write code on my first day at <a title="" target="_blank" href="http://recurse.com">The Recurse Center</a> and
+                <a
+                    title="" href="javascript:;" data-goto-section="Day1-Joke">all I could type was “sex,”</a> forcing me to switch tracks and learn just Rust instead.</p>
+        </div>
+        <div id="Day1-WhatToDo" data-tags="Sprite,what-to-do" class="section" hidden="true">
+            <p>There’s no such thing as a stupid question, so I usually tend to <a title="" href="javascript:;" data-goto-section="Day1-WhatIDid">just ask</a>.</p>
+        </div>
+        <div id="Day1-WhatIDid" data-tags="Sprite,what-i-did" class="section" hidden="true">
+            <p>I took that shower. My mind’s been a lot clearer.</p>
+        </div>
+        <div id="Day1-Joke" data-tags="" class="section" hidden="true">
+            <p>That was a joke. This isn’t <em>strictly</em> interactive <em>non</em>-fiction.</p>
         </div>
         <!-- source/menu.md -->
         <div id="Menu" data-tags="Start" class="section" hidden="true">
             <h2><em>Welcome to the</em></h2>
             <h2>Stream of Pretentiousness</h2>
-            <p>You’re playing an interactive nonfiction game written and programmed by Nat Quayle Nelson. New episodes are released daily!</p>
+            <p>You’re playing an irreverent interactive nonfiction game written and programmed by Nat Quayle Nelson. New episodes are released daily!</p>
             <h3><a title="" href="javascript:;" data-replace-with="@Season2" id="inline-0">Season Two: NYC, 2018</a></h3>
-            <h3>Season One: SLC, 2017 (TODO link to Twine episodes)</h3>
+            <h3><a title="" href="javascript:;" data-replace-with="@Season1" id="inline-1">Season One: SLC, 2017</a></h3>
+        </div>
+        <div id="Season1" data-tags="" class="section" hidden="true">
+            <p>Season 1 was made in Twine. Lots of people get stuck playing it because they don’t see the back button. It might be hard to see, but it’s there on the left. Trust me.</p>
+            <p><a href="assets/season1/index.html">Play season 1</a></p>
         </div>
         <div id="Season2" data-tags="" class="section" hidden="true">
             <h3>Season 2: NYC, 2018</h3>
-            <p>Content warning: Queer stuff, sex stuff, offensive language. Not for my family. :P</p>
+            <p>Content warning: Queer stuff, sex stuff, offensive language. Generally oversharing.</p>
             <p><span data-expand-macro="#Season2Links"></span></p>
         </div>
 
