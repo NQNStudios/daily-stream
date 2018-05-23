@@ -1,6 +1,6 @@
 {{5/22/18: S2}}
 
-I'm back in New York City! This is the place where I first decided to start making Stream of Pretentiousness. Let me set the tone of [TODO the game/my life] by telling you an [anecdote]({@Day1-Anecdote}) about moving here.
+I'm back in New York City! This is the place where I first decided to start making Stream of Pretentiousness. Let me set the tone of the game by telling you an [anecdote]({@Day1-Anecdote}) about moving here.
 
 {{Day1-Anecdote: Sprite, bunk, Scale, 0.3}}
 
@@ -12,7 +12,7 @@ Luckily I have an important group chat where I can [talk about]({@Day1-Talk}) wh
 
 {{Day1-Talk: Sprite, no-fap}}
 
-Things were starting to get [out of hand]({@Day1-WhatToDo}). I sat down to write code on my first day at [The Recurse Center](http://recurse.com) and [all I could type was "sex,"]({#Day1ShowJoke}) forcing me to switch tracks and learn just Rust instead.
+Things were starting to get [out of hand]({@Day1-WhatToDo}). I sat down to write code on my first day at [The Recurse Center](http://recurse.com) and [all I could type was "sex,"]({#Day1ShowJoke}) forcing me to switch tracks and just learn Rust instead.
 
 {{Day1-WhatToDo: Sprite, what-to-do}}
 
