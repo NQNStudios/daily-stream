@@ -8,6 +8,7 @@ function __preload() {
   phaser.load.image('no-fap', 'assets/no-fap.png');
   phaser.load.image('what-to-do', 'assets/what-to-do.png');
   phaser.load.image('what-i-did', 'assets/what-i-did.png');
+  phaser.load.image('shower', 'assets/shower.png');
 }
 
 // New section event: if a section has the Sprite tag, add the sprite to the
@@ -23,14 +24,16 @@ Core.AddEventListener('OnGotoSection', function(id, element, tags, reason) {
     spriteKey = tags[index+1];
   }
 
-  window['sprite'] = phaser.add.sprite(0, 0, spriteKey);
+  if (spriteKey !== "none") {
+    window['sprite'] = phaser.add.sprite(0, 0, spriteKey);
 
-  index = tags.indexOf('Scale');
-  var scale = 1;
-  if (index != -1) {
-    var scale = parseFloat(tags[index+1]);
+    index = tags.indexOf('Scale');
+    var scale = 1;
+    if (index != -1) {
+      var scale = parseFloat(tags[index+1]);
 
-    window['sprite'].scale.setTo(scale, scale);
+      window['sprite'].scale.setTo(scale, scale);
+    }
   }
 });
 

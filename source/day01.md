@@ -12,7 +12,7 @@ Luckily I have an important group chat where I can [talk about]({@Day1-Talk}) wh
 
 {{Day1-Talk: Sprite, no-fap}}
 
-Things were starting to get [out of hand]({@Day1-WhatToDo}). I sat down to write code on my first day at [The Recurse Center](http://recurse.com) and [all I could type was "sex,"]({@Day1-Joke}) forcing me to switch tracks and learn just Rust instead.
+Things were starting to get [out of hand]({@Day1-WhatToDo}). I sat down to write code on my first day at [The Recurse Center](http://recurse.com) and [all I could type was "sex,"]({#Day1ShowJoke}) forcing me to switch tracks and learn just Rust instead.
 
 {{Day1-WhatToDo: Sprite, what-to-do}}
 
