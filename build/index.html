@@ -469,6 +469,55 @@
             changeCSS("assets/default-style.css");
         }
 
+        // source/day03.js
+        function Day3Animation() {
+            var animationTime = 4000;
+            var style = {
+                font: "24px Arial",
+                fill: "#ffffff",
+                align: "left"
+            };
+            var thingsHeSaid = [
+                "I've been reading the bible more lately",
+                "It's really helped me understand who I am",
+                "I recommend you read it",
+                "",
+                "I mean I'm not gonna say \"I hate you\" or anything",
+                "I just don't think you should be doing that stuff",
+                "I'm sick of people assuming I'm gay",
+                "",
+                "I used to act on my gay feelings",
+                "God loves me, he's just not happy when I'm not doing his will",
+                "When I was younger I cross-dressed",
+                "I have a friend named Erik who wants to go by Samantha",
+                "I still love him but it's wrong to try to be a woman",
+                "",
+                "I'm turning 22 and I've never kissed anyone",
+                "Can you help me meet girls?",
+            ];
+            words = phaser.add.group();
+
+            var startingY = 830;
+            var delay = 0;
+
+            for (var i = 0; i < thingsHeSaid.length; ++i) {
+                var text = phaser.add.text(30, startingY, thingsHeSaid[i], style);
+                phaser.add.tween(text).to({
+                    y: -50
+                }, animationTime, Phaser.Easing.Linear.None, true, delay, 0, false);
+
+                delay += animationTime / 3;
+            }
+
+            setTimeout(Day3RevealNextLink, delay + animationTime);
+        }
+
+        function Day3RevealNextLink() {
+            day2LightsOn();
+            words.destroy();
+            document.getElementById("__currentSection").innerHTML += Core.GetSection("Day3NextToReveal").innerHTML;
+        }
+
         // source/script.js
         // Your Javascript goes here
 
@@ -481,6 +530,9 @@
             phaser.load.image('what-to-do', 'assets/what-to-do.png');
             phaser.load.image('what-i-did', 'assets/what-i-did.png');
             phaser.load.image('shower', 'assets/shower.png');
+            phaser.load.image('gay-jesus', 'assets/gay-jesus.jpg');
+            phaser.load.image('gay-street', 'assets/gay-street.jpg');
+            phaser.load.image('christmas', 'assets/christmas.png');
         }
 
         // New section event: if a section has the Sprite tag, add the sprite to the
@@ -542,7 +594,7 @@
     <div id="__content">
         <!-- source/day01.md -->
         <div id="5/22/18" data-tags="S2" class="section" hidden="true">
-            <p>I’m back in New York City! This is the place where I first decided to start making Stream of Pretentiousness. Let me set the tone of [TODO the game/my life] by telling you an <a title="" href="javascript:;" data-goto-section="Day1-Anecdote">anecdote</a>                about moving here.</p>
+            <p>I’m back in New York City! This is the place where I first decided to start making Stream of Pretentiousness. Let me set the tone of the game by telling you an <a title="" href="javascript:;" data-goto-section="Day1-Anecdote">anecdote</a>                about moving here.</p>
         </div>
         <div id="Day1-Anecdote" data-tags="Sprite,bunk,Scale,0.3" class="section" hidden="true">
             <p>I’m only here for the next 3 months, and on a tight budget. I live in a shared bedroom with a total of 6 beds. I’m top bunk on the left, and I don’t get much <a title="" href="javascript:;" data-goto-section="Day1-AloneTime">privacy</a>.</p>
@@ -551,7 +603,7 @@
             <p>Luckily I have an important group chat where I can <a title="" href="javascript:;" data-goto-section="Day1-Talk">talk about</a> what happens to my bodily functions without privacy.</p>
         </div>
         <div id="Day1-Talk" data-tags="Sprite,no-fap" class="section" hidden="true">
-            <p>Things were starting to get <a title="" href="javascript:;" data-goto-section="Day1-WhatToDo">out of hand</a>. I sat down to write code on my first day at <a title="" target="_blank" href="http://recurse.com">The Recurse Center&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a>                and <a title="" href="javascript:;" data-call-function="Day1ShowJoke">all I could type was “sex,”</a> forcing me to switch tracks and learn just Rust instead.</p>
+            <p>Things were starting to get <a title="" href="javascript:;" data-goto-section="Day1-WhatToDo">out of hand</a>. I sat down to write code on my first day at <a title="" target="_blank" href="http://recurse.com">The Recurse Center&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a>                and <a title="" href="javascript:;" data-call-function="Day1ShowJoke">all I could type was “sex,”</a> forcing me to switch tracks and just learn Rust instead.</p>
         </div>
         <div id="Day1-WhatToDo" data-tags="Sprite,what-to-do" class="section" hidden="true">
             <p>There’s no such thing as a stupid question, so I usually tend to <a title="" href="javascript:;" data-goto-section="Day1-WhatIDid">just ask</a>.</p>
@@ -585,8 +637,31 @@
             <p>I only wish the lights worked when I go to pee…</p>
             <p><a title="" href="javascript:;" data-goto-section="Menu">See you tomorrow.</a></p>
         </div>
+        <!-- source/day03.md -->
+        <div id="5/24/18" data-tags="S2" class="section" hidden="true">
+            <p>Homesickness is a vulnerable state. Sometimes vulnerability is the best opportunity to grow, but not when you share it in all the <a title="" href="javascript:;" data-goto-section="Day3-1">wrong places.</a></p>
+        </div>
+        <div id="Day3-1" data-tags="Sprite,gay-jesus,Scale,0.5" class="section" hidden="true">
+            <p>One of my new roommates is Christian and I <em>really</em> <a title="" href="javascript:;" data-goto-section="Day3-2">didn’t see it coming.</a></p>
+        </div>
+        <div id="Day3-2" data-tags="Sprite,gay-street,Scale,0.25" class="section" hidden="true">
+            <p>I guess I assume most people of color are even better Woke Atheists™ than I am, especially outside of Utah. And everyone else in the house is queer. And there’s a poster on the wall that says Gay Street.</p>
+            <p>So I thought I could <a title="" href="javascript:;" data-goto-section="Day3-3">be myself.</a></p>
+        </div>
+        <div id="Day3-3" data-tags="Sprite,christmas,Scale,0.3" class="section" hidden="true">
+            <p>And I knew that was a mistake right after I showed him my Christmas party photos.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day3-4">The things he said…</a></p>
+        </div>
+        <div id="Day3-4" data-tags="Sprite,none,Dark,Start" class="section" hidden="true">
+            <p><span data-expand-macro="#Day3Animation"></span></p>
+        </div>
+        <div id="Day3NextToReveal" data-tags="" class="section" hidden="true">
+            <p>I suddenly felt very unsafe.</p>
+            <p>I didn’t say what I wanted to.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Menu">I just went to bed.</a></p>
+        </div>
         <!-- source/menu.md -->
-        <div id="Menu" data-tags="Start" class="section" hidden="true">
+        <div id="Menu" data-tags="" class="section" hidden="true">
             <h2><em>Welcome to the</em></h2>
             <h2>Stream of Pretentiousness</h2>
             <p>You’re playing an irreverent interactive nonfiction game written and programmed by Nat Quayle Nelson. New episodes are released daily!</p>
@@ -631,7 +706,7 @@
     window.onload = function() {
         var args = {
             "width": 800,
-            "height": 480,
+            "height": 800,
             "transparent": true,
             "antialias": true
         }; // This code is injected into a Fractive story's output HTML file as the first

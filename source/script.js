@@ -9,6 +9,9 @@ function __preload() {
   phaser.load.image('what-to-do', 'assets/what-to-do.png');
   phaser.load.image('what-i-did', 'assets/what-i-did.png');
   phaser.load.image('shower', 'assets/shower.png');
+  phaser.load.image('gay-jesus', 'assets/gay-jesus.jpg');
+  phaser.load.image('gay-street', 'assets/gay-street.jpg');
+  phaser.load.image('christmas', 'assets/christmas.png');
 }
 
 // New section event: if a section has the Sprite tag, add the sprite to the

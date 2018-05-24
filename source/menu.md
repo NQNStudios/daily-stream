@@ -1,4 +1,4 @@
-{{Menu: Start}}
+{{Menu}}
 
 ## *Welcome to the*
 ## Stream of Pretentiousness

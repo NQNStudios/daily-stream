@@ -39,7 +39,7 @@
     },
 	"phaserArguments": {
 		"width": 800,
-		"height": 480,
+		"height": 800,
 		"transparent": true
 	},
     "includeBackButton": true,
