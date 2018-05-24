@@ -18,7 +18,7 @@ And I knew that was a mistake right after I showed him my Christmas party photos
 
 [The things he said...]({@Day3-4})
 
-{{Day3-4: Sprite, none, Dark, Start}}
+{{Day3-4: Sprite, none, Dark}}
 
 {#Day3Animation}
 
