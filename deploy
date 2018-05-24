@@ -1,0 +1,4 @@
+#! /bin/bash
+
+space-fractive compile .
+butler push build nqn/stream-of-pretentiousness:web
