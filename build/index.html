@@ -536,6 +536,51 @@
             document.getElementById("__currentSection").innerHTML += Core.GetSection("Day3NextToReveal").innerHTML;
         }
 
+        // source/day04.js
+        function Day4Preload() {
+            phaser.load.audio('dooropen', 'assets/day4/dooropen.wav');
+            phaser.load.audio('faintmusic', 'assets/day4/faintmusic.wav');
+            phaser.load.audio('monologue', 'assets/day4/monologue.wav');
+            phaser.load.audio('music1', 'assets/day4/music1.wav');
+            phaser.load.audio('music2', 'assets/day4/music2.wav');
+            phaser.load.audio('soundsgood', 'assets/day4/soundsgood.wav');
+
+            phaser.load.image('cards', 'assets/day4/cards.jpg');
+            phaser.load.image('goodhand', 'assets/day4/goodhand.jpg');
+            phaser.load.image('roof', 'assets/day4/roof.jpg');
+            phaser.load.image('gay-jesus', 'assets/gay-jesus.jpg');
+        }
+
+        function Day4Reveal1() {
+            document.getElementById("__currentSection").innerHTML += Core.GetSection("Day4MinPt1").innerHTML;
+        }
+
+        function Day4Reveal2() {
+            document.getElementById("__currentSection").innerHTML += Core.GetSection("Day4MinPt2").innerHTML;
+            return "check my mailbox (nothing)";
+        }
+
+        function Day4FaintMusic() {
+            phaser.sound.play('faintmusic');
+        }
+
+        function Day4Music1() {
+            phaser.sound.play('music1');
+        }
+
+        function Day4OpenDoor() {
+            phaser.sound.play('dooropen');
+            phaser.sound.play('music2');
+        }
+
+        function Day4SoundsGood() {
+            phaser.sound.play('soundsgood')
+        }
+
+        function Day4PlayMonologue() {
+            phaser.sound.play('monologue');
+        }
+
         // source/script.js
         // Your Javascript goes here
 
@@ -675,6 +720,52 @@
             <p>I suddenly felt very unsafe.</p>
             <p>I didn’t say what I wanted to.</p>
             <p><a title="" href="javascript:;" data-goto-section="Menu">I just went to bed.</a></p>
+        </div>
+        <!-- source/day04.md -->
+        <div id="5/25/18 (First episode with audio!)" data-tags="S2,Dark,Sprite,none" class="section" hidden="true">
+            <p>Fuck, these streets are <a title="" href="javascript:;" data-goto-section="Day4-2">so lonely.</a></p>
+        </div>
+        <div id="Day4-2" data-tags="Dark,Sprite,cards,Scale,0.1" class="section" hidden="true">
+            <p>Getting off the subway I saw a deck of cards someone had <a title="" href="javascript:;" data-goto-section="Day4-3">ripped to shreds</a> and scattered everywhere.</p>
+        </div>
+        <div id="Day4-3" data-tags="Dark,Sprite,goodhand,Scale,0.1" class="section" hidden="true">
+            <p>And I realized I’ve been dealt a really good hand with this summer in New York, but that’s what sucks:</p>
+            <p>No amount of loneliness would make it a good decision to shred the deck and go back to the certainty of <a title="" href="javascript:;" data-goto-section="Day4-4">home.</a></p>
+        </div>
+        <div id="Day4-4" data-tags="Dark,Sprite,none" class="section" hidden="true">
+            <p>Home here isn’t really a home yet. I’m out of place in this neighborhood. My earbuds broke today so I can’t retreat into my music.</p>
+            <p>At least I’m here now, I can <a title="" href="javascript:;" data-call-function="Day4Reveal1">open the front door</a></p>
+        </div>
+        <div id="Day4MinPt1" data-tags="" class="section" hidden="true">
+            <p><a title="" href="javascript:;" data-call-function="Day4Reveal2">check my mailbox</a></p>
+        </div>
+        <div id="Day4MinPt2" data-tags="" class="section" hidden="true">
+            <p><a title="" href="javascript:;" data-goto-section="Day4-5">climb the stairs</a></p>
+        </div>
+        <div id="Day4-5" data-tags="Dark,Sprite,none" class="section" hidden="true">
+            <p><span data-expand-macro="#Day4FaintMusic"></span></p>
+            <p>…and hear a song I’ve never heard before.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day4-6">Who’s playing that?</a></p>
+        </div>
+        <div id="Day4-6" data-tags="Dark,Sprite,none" class="section" hidden="true">
+            <p><span data-expand-macro="#Day4Music1"></span></p>
+            <p>It’s from inside my apartment.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day4-7">Go in.</a></p>
+        </div>
+        <div id="Day4-7" data-tags="Dark,Sprite,gay-jesus,Scale,0.5" class="section" hidden="true">
+            <p><span data-expand-macro="#Day4OpenDoor"></span></p>
+            <p>Oh my God, it’s him!</p>
+            <p>What do I <a title="" href="javascript:;" data-goto-section="Day4-8">say?</a></p>
+        </div>
+        <div id="Day4-8" data-tags="Dark,Sprite,gay-jesus,Scale,0.5" class="section" hidden="true">
+            <p><span data-expand-macro="#Day4SoundsGood"></span></p>
+            <p>I could have said “That sound was the most beautiful thing I heard today.”</p>
+            <p>I could have said “Fuck you.”</p>
+            <p>I could have <a title="" href="javascript:;" data-goto-section="Day4-9">said…</a></p>
+        </div>
+        <div id="Day4-9" data-tags="Dark,Sprite,roof,Scale,0.1" class="section" hidden="true">
+            <p><span data-expand-macro="#Day4PlayMonologue"></span><br/>…what I said to myself when I went to the roof and went over that moment in my head.</p>
+            <p>But it’s not my job to say all that to a stranger.</p>
         </div>
         <!-- source/menu.md -->
         <div id="Menu" data-tags="Start" class="section" hidden="true">
