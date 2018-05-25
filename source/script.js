@@ -1,17 +1,8 @@
 // Your Javascript goes here
 
-// Load assets
+// Load assets every story needs
 function __preload() {
   phaser.load.image('cover', 'assets/itch-cover.jpeg');
-  phaser.load.image('bunk', 'assets/bunk.jpg');
-  phaser.load.image('no-fap-nat', 'assets/no-fap-nat.png');
-  phaser.load.image('no-fap', 'assets/no-fap.png');
-  phaser.load.image('what-to-do', 'assets/what-to-do.png');
-  phaser.load.image('what-i-did', 'assets/what-i-did.png');
-  phaser.load.image('shower', 'assets/shower.png');
-  phaser.load.image('gay-jesus', 'assets/gay-jesus.jpg');
-  phaser.load.image('gay-street', 'assets/gay-street.jpg');
-  phaser.load.image('christmas', 'assets/christmas.png');
 }
 
 // New section event: if a section has the Sprite tag, add the sprite to the
@@ -47,9 +38,16 @@ function Season2Links() {
   var episodes = Core.GetSectionsWithTag("S2");
 
   for (var i = 0; i < episodes.length; i++) {
-    episode = episodes[i];
+    var episode = episodes[i];
 
-    list += '<p><a href="javascript:Core.GoToSection(\'' + episode + '\');">' + episode + '</a></p>';
+    // Each episode link needs to call the preload function for its episode
+    var preloadFunction = 'Day' + (i+1) +'Preload';
+    var onloadFunction = 'function() { Core.GoToSection(\'' + episode  +'\'); }';
+
+    var onclick = preloadFunction + '();';
+    onclick += 'phaser.load.onLoadComplete.add(' + onloadFunction + ');';
+    onclick += 'phaser.load.start();';
+    list += '<p><a href="javascript:' + onclick + '">' + episode + '</a></p>';
   }
 
   return list;

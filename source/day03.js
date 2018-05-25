@@ -1,3 +1,9 @@
+function Day3Preload() {
+  phaser.load.image('gay-jesus', 'assets/gay-jesus.jpg');
+  phaser.load.image('gay-street', 'assets/gay-street.jpg');
+  phaser.load.image('christmas', 'assets/christmas.png');
+}
+
 function Day3Animation() {
   var animationTime = 4000;
 	var style = { font: "24px Arial", fill: "#ffffff", align: "left" };

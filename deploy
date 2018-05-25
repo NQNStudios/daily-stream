@@ -1,4 +1,8 @@
 #! /bin/bash
 
 space-fractive compile .
-butler push build nqn/stream-of-pretentiousness:web
+cd build
+zip -r build.zip ./*
+mv build.zip ../
+cd ../
+butler push build.zip nqn/stream-of-pretentiousness:web

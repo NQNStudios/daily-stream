@@ -1,3 +1,7 @@
+function Day2Preload() {
+  phaser.load.image('shower', 'assets/shower.png');
+}
+
 Core.AddEventListener("OnGotoSection", function(sectionId, element, tags, reason) {
   if (sectionId === "5/23/18" && reason == EGotoSectionReason.Back) {
     day2LightsOut();
