@@ -3,7 +3,7 @@
 ## *Welcome to the*
 ## Stream of Pretentiousness
 
-You're playing an irreverent interactive nonfiction game written and programmed by Nat Quayle Nelson. New episodes are released daily!
+You're playing an irreverent interactive nonfiction game written and programmed by Nat Quayle Nelson. New episodes are released daily Monday-Friday!
 
 #### Content warning: Queer stuff, sex stuff, offensive language. General oversharing.
 

@@ -581,6 +581,13 @@
             phaser.sound.play('monologue');
         }
 
+        // source/day05.js
+        day5onlyChance = 'my only chance?';
+
+        function Day5Preload() {
+            phaser.load.image('rabbit-hole', 'assets/day5/rabbithole.png');
+        }
+
         // source/script.js
         // Your Javascript goes here
 
@@ -767,14 +774,26 @@
             <p><span data-expand-macro="#Day4PlayMonologue"></span><br/>…what I said to myself when I went to the roof and went over that moment in my head.</p>
             <p>But it’s not my job to say all that to a stranger.</p>
         </div>
+        <!-- source/day05.md -->
+        <div id="5/28/18" data-tags="S2" class="section" hidden="true">
+            <p>It’s been a while since I played other interactive fiction for inspiration. I’ve had <a title="" target="_blank" href="http://www.teleportacia.org/war">My Boyfriend Came Back from the War&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a>                on my list for <a title="" href="javascript:;" data-goto-section="Day5-2">a while.</a></p>
+        </div>
+        <div id="Day5-2" data-tags="Sprite,rabbit-hole,Scale,0.75" class="section" hidden="true">
+            <p>This summer is <a title="" href="javascript:;" data-replace-with="$day5onlyChance" id="inline-1">my chance</a> to finally live the life where I follow up on things that seemed too trivial to justify spending time on before. To fall down
+                <a
+                    title="" href="javascript:;" data-goto-section="Day5-3">rabbit holes</a> like I always wish I could.</p>
+        </div>
+        <div id="Day5-3" data-tags="" class="section" hidden="true">
+            <p>So if you’re wondering where I’ve gone in the next 24 hours, know that it started with a google search and the permission to keep clicking <a title="" target="_blank" href="http://awp.diaart.org/lialina/diaintro.html">“Open Link in New Tab.”&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+        </div>
         <!-- source/menu.md -->
         <div id="Menu" data-tags="Start" class="section" hidden="true">
             <h2><em>Welcome to the</em></h2>
             <h2>Stream of Pretentiousness</h2>
-            <p>You’re playing an irreverent interactive nonfiction game written and programmed by Nat Quayle Nelson. New episodes are released daily!</p>
+            <p>You’re playing an irreverent interactive nonfiction game written and programmed by Nat Quayle Nelson. New episodes are released daily Monday-Friday!</p>
             <h4>Content warning: Queer stuff, sex stuff, offensive language. General oversharing.</h4>
-            <h3><a title="" href="javascript:;" data-replace-with="@Season2" id="inline-1">Season Two: NYC, 2018</a></h3>
-            <h3><a title="" href="javascript:;" data-replace-with="@Season1" id="inline-2">Season One: SLC, 2017</a></h3>
+            <h3><a title="" href="javascript:;" data-replace-with="@Season2" id="inline-2">Season Two: NYC, 2018</a></h3>
+            <h3><a title="" href="javascript:;" data-replace-with="@Season1" id="inline-3">Season One: SLC, 2017</a></h3>
         </div>
         <div id="Season1" data-tags="" class="section" hidden="true">
             <p>Season 1 was made in Twine. Lots of people get stuck playing it because they don’t see the back button. It might be hard to see, but it’s there on the left. Trust me.</p>
