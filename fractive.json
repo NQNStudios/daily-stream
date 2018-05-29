@@ -14,7 +14,9 @@
         "assets/**"
     ],
     "ignore": [],
-    "aliases": [],
+    "aliases": [
+        { "regex": "id:(?<id>[a-zA-Z0-9]+)", "replaceWith": "<p id=\"${id}\">", "end": "</p>"}
+    ],
     "template": "template.html",
     "output": "build",
     "outputFormat": "prettify",
