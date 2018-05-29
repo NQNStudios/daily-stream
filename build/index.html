@@ -589,13 +589,25 @@
         }
 
         // source/day06.js
+        window['sectionsVisited'] = {};
+
+        Core.AddEventListener('OnGotoSection', function(id, element, tags, reason) {
+            if (id === "Day6Test") {
+                Day6SeenAllCheck();
+            }
+
+            window['sectionsVisited'][id] = true;
+        });
+
         function Day6Preload() {
             phaser.load.image('outline', 'assets/day6/outline.jpg');
+            phaser.load.image('outlineDone', 'assets/day6/outlineDone.jpg');
             phaser.load.image('rc1', 'assets/day6/rc1.jpg');
             phaser.load.image('rc2', 'assets/day6/rc2.jpg');
             phaser.load.image('sourcecode', 'assets/day6/sourcecode.png');
             phaser.load.image('twine', 'assets/day6/twine.png');
             phaser.load.image('philadelphia', 'assets/day6/philadelphia.jpeg');
+            phaser.load.image('chemex', 'assets/day6/chemex.jpg');
         }
 
         function Day6PutOnHeadphones() {
@@ -620,6 +632,39 @@
 
             var nextPart = Core.GetSection("Day6HeadphonesOn");
             section.innerHTML += nextPart.innerHTML;
+        }
+
+        function Day6SeenAllCheck() {
+            var seenAll = true;
+
+            var SectionsNeeded = [
+                'Day6SourceCode',
+                'Day6Twine',
+                'Day6Test',
+                'Day6LastNight',
+                'Day6Exhausted',
+                'Day6Breakfast',
+                'Day6Bagels',
+                'Day6Eggs',
+                'Day6Coffee',
+                'Day6OJ',
+                'Day6PaperPlates',
+                'Day6CoffeeTakesAWhile',
+                'Day6BadSugaring',
+                'Day6ArrestedDevelopment',
+                'Day6Quiet'
+            ];
+
+            console.log(window['sectionsVisited']);
+
+            for (var i = 0; i < SectionsNeeded.length; ++i) {
+                if (SectionsNeeded[i] in window['sectionsVisited'] && window['sectionsVisited'][SectionsNeeded[i]] === true) {} else
+                    seenAll = false;
+            }
+
+            if (seenAll) {
+                Core.GoToSection("Day6Final");
+            }
         }
 
         // source/script.js
@@ -836,6 +881,7 @@
             <p>I’m having a pretty rough morning. I was the first person to get to RC, and I had a lot on my mind.</p>
             <ul>
                 <li><a title="" href="javascript:;" data-goto-section="Day6LastNight">Last night</a></li>
+                <li><a title="" href="javascript:;" data-goto-section="Day6ArrestedDevelopment">Arrested Development</a></li>
                 <li><a title="" href="javascript:;" data-goto-section="Day6Breakfast">Breakfast</a></li>
                 <li><a title="" href="javascript:;" data-goto-section="Day6Coffee">Goddamn, do I need coffee</a></li>
                 <li><a title="" href="javascript:;" data-goto-section="Day6Quiet">It’s so quiet</a></li>
@@ -869,11 +915,50 @@
                 at home, my real home.</p>
             <p><a title="" href="javascript:;" data-goto-section="Day6Breakfast">Anyway,</a></p>
         </div>
-        <div id="Day6Coffee" data-tags="" class="section" hidden="true">
-            <p>TODO</p>
+        <div id="Day6Coffee" data-tags="Sprite,chemex,Scale,0.2" class="section" hidden="true">
+            <p>The Chemex here is pretty awesome. I love the visceral feel of making coffee with it. Maybe I’ll make a minigame all about that.</p>
+            <p>The problem is it takes <a title="" href="javascript:;" data-goto-section="Day6CoffeeTakesAWhile">so damn long</a>.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day6OJ">Orange juice</a> in the meantime?</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day6Test">Anyway,</a></p>
         </div>
-        <div id="Day6Quiet" data-tags="" class="section" hidden="true">
-            <p>TODO</p>
+        <div id="Day6OJ" data-tags="" class="section" hidden="true">
+            <p>When I realized <a title="" href="javascript:;" data-goto-section="Day6Eggs">cooking at my apartment was a bust,</a> I still managed to salvage some of the groceries I’d bought. A jug of orange juice I stuffed in my backpack along with a pack
+                of <a title="" href="javascript:;" data-goto-section="Day6PaperPlates">paper plates</a> I brought all the way on the subway to RC.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day6Coffee">Anyway,</a></p>
+        </div>
+        <div id="Day6PaperPlates" data-tags="" class="section" hidden="true">
+            <p>I got in an argument once about the environmental sustainability of using paper plates. I figured they were shitty for the environment, but my friend pointed out that we use a ton of water washing our reusable plates, too. I didn’t bother
+                to do any more research after that and I kind of feel bad about it, but I use paper plates now when I don’t have the energy to wash dishes.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day6Coffee">Anyway,</a></p>
+        </div>
+        <div id="Day6CoffeeTakesAWhile" data-tags="" class="section" hidden="true">
+            <h1>The Morning Paradox</h1>
+            <p>The worst thing in the world is the feeling of not yet having your morning coffee, and having to actually <em>make the coffee</em> while still in that state of <a title="" href="javascript:;" data-goto-section="Day6BadSugaring">spiritual dysfunction.</a>                Also making breakfast.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day6Coffee">Anyway,</a></p>
+        </div>
+        <div id="Day6BadSugaring" data-tags="" class="section" hidden="true">
+            <p>Yesterday I messed up and put a packet of sugar directly in the pot. I was so furious with myself, even though I knew it was such a small mistake. I had to bring up a mantra I’ve been using to reign myself in, “The things you say to yourself,
+                you wouldn’t say to anyone else.”</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day6Coffee">Anyway,</a></p>
+        </div>
+        <div id="Day6ArrestedDevelopment" data-tags="" class="section" hidden="true">
+            <p>As I was laying awake at 6:30 in the morning I had a chance to watch the first episode of Season 5. It wasn’t as bad as Season 4 but I’m still really worried that it’ll suck.</p>
+            <p>Out here starving for connections to home and my comfortable past, I need this season to not suck. That show used to mean so much to me.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day6Test">Anyway,</a></p>
+        </div>
+        <div id="Day6Quiet" data-tags="Sprite,rc2,Scale,0.1" class="section" hidden="true">
+            <p>Here all alone, I can play my music through the speakers. I can actually sing along! It’s been so long since I last sang. I can change into a skirt without anyone noticing.</p>
+            <p>I guess it’s not so bad.</p>
+            <p><a title="" href="javascript:;" data-goto-section="Day6Test">Anyway,</a></p>
+        </div>
+        <div id="Day6Final" data-tags="Sprite,outlineDone,Scale,0.1" class="section" hidden="true">
+            <p>Okay this episode was a <a title="" href="javascript:;" data-goto-section="Day6Tomorrow">whole lot of work</a>, but I nailed it. I mean, you be the judge and all, maybe it’s boring as hell (probably) but the point is, I wanted to be nonlinear
+                and I did it.</p>
+            <p>Fractive still needs a proper editor, though.</p>
+        </div>
+        <div id="Day6Tomorrow" data-tags="" class="section" hidden="true">
+            <p>Tomorrow I’ll probably just dump some bullshit I’ve already written. :P</p>
+            <p>See you then,<br/>—Nat</p>
         </div>
         <!-- source/menu.md -->
         <div id="Menu" data-tags="Start" class="section" hidden="true">
