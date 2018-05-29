@@ -1,11 +1,16 @@
 window['sectionsVisited'] = {};
 
 Core.AddEventListener('OnGotoSection', function(id, element, tags, reason) {
+  var result = false;
   if (id === "Day6Test") {
-    Day6SeenAllCheck();
+    result = Day6SeenAllCheck();
   }
 
   window['sectionsVisited'][id] = true;
+
+  // If we end up going to the final section, skip the other event listeners
+  // because they'll add the wrong sprite
+  if (result) return true;
 });
 
 function Day6Preload() {
@@ -69,10 +74,11 @@ function Day6SeenAllCheck() {
   for (var i = 0; i < SectionsNeeded.length; ++i) {
     if (SectionsNeeded[i] in window['sectionsVisited'] && window['sectionsVisited'][SectionsNeeded[i]] === true) { }
     else
-      seenAll = false;
+      return false;
   }
 
   if (seenAll) {
     Core.GoToSection("Day6Final");
+    return true;
   }
 }
