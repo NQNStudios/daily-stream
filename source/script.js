@@ -44,7 +44,7 @@ function Season2Links() {
     var preloadFunction = 'Day' + (i+1) +'Preload';
     var onloadFunction = 'function() { Core.GoToSection(\'' + episode  +'\'); }';
 
-    var onclick = preloadFunction + '();';
+    var onclick = 'if (\'' + preloadFunction + '\' in window) {' + preloadFunction + '(); }';
     onclick += 'phaser.load.onLoadComplete.add(' + onloadFunction + ');';
     onclick += 'phaser.load.start();';
     list += '<p><a href="javascript:' + onclick + '">' + episode + '</a></p>';

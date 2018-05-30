@@ -75,6 +75,8 @@ top: 75px;
 left: 350px;
     color: #555555;
     animation: 1s textFadeIn;
+    width: 100%;
+    height: 100%;
     max-width: 900px;
 }
 @keyframes textFadeIn

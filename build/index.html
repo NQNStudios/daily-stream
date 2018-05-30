@@ -723,7 +723,7 @@
                 var preloadFunction = 'Day' + (i + 1) + 'Preload';
                 var onloadFunction = 'function() { Core.GoToSection(\'' + episode + '\'); }';
 
-                var onclick = preloadFunction + '();';
+                var onclick = 'if (\'' + preloadFunction + '\' in window) {' + preloadFunction + '(); }';
                 onclick += 'phaser.load.onLoadComplete.add(' + onloadFunction + ');';
                 onclick += 'phaser.load.start();';
                 list += '<p><a href="javascript:' + onclick + '">' + episode + '</a></p>';
@@ -968,6 +968,24 @@
         <div id="Day6Tomorrow" data-tags="" class="section" hidden="true">
             <p>Tomorrow I’ll probably just dump some bullshit I’ve already written. :P</p>
             <p>See you then,<br/>—Nat</p>
+        </div>
+        <!-- source/day07.md -->
+        <div id="5/30/18" data-tags="S2" class="section" hidden="true">
+            <p>I’m feeling lazy so I just want to show you something I wrote a while ago.</p>
+            <p>There’s a <a title="" href="javascript:;" data-goto-section="Day7Backstory">backstory</a> if you’re into that kind of thing.</p>
+            <p>If not, <a title="" href="javascript:;" data-goto-section="Day7TinderDaddy">click here.</a></p>
+        </div>
+        <div id="Day7Backstory" data-tags="" class="section" hidden="true">
+            <p>For about three weeks, I was a writer for <a title="" target="_blank" href="http://www.hercampus.com/author/nat-quayle-nelson">Her Campus Utah.&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+            <p>You are about to read my third article, which was deemed extremely hilarious but too vulgar to be published.</p>
+            <p>That’s not why I quit—I quit because the site is run by a for-profit company that doesn’t pay its writers anything. It seems really unfair and anti-feminist that the women who set out to empower women in college, would see fit to profit off
+                of unpaid labor by women.</p>
+            <p>Without further ado… <a title="" href="javascript:;" data-goto-section="Day7TinderDaddy">Valentines from a Tinder Daddy</a></p>
+        </div>
+        <div id="Day7TinderDaddy" data-tags="" class="section" hidden="true">
+            <object data="assets/day7/Valentines from a Tinder Daddy.pdf#page=1" type="application/pdf" width="100%" height="100%">
+   <p><b>Error</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="assets/day7/Valentines from a Tinder Daddy.pdf">Download PDF</a>.</p>
+</object>
         </div>
         <!-- source/menu.md -->
         <div id="Menu" data-tags="Start" class="section" hidden="true">
