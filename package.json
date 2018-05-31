@@ -1,0 +1,27 @@
+{
+  "name": "daily-stream",
+  "version": "1.0.0",
+  "description": "Nat Quayle Nelson's Stream of Pretentiousness",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NQNStudios/daily-stream.git"
+  },
+  "keywords": [
+    "interactive-nonfiction",
+    "hypertext",
+    "slice-of-life"
+  ],
+  "author": "Nat Quayle Nelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NQNStudios/daily-stream/issues"
+  },
+  "homepage": "https://github.com/NQNStudios/daily-stream#readme",
+  "dependencies": {
+    "sillyname": "^0.1.0"
+  }
+}
