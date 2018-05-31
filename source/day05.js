@@ -1,5 +1,5 @@
-day5onlyChance = 'my only chance?';
+window.day5onlyChance = 'my only chance?';
 
-function Day5Preload() {
+window.Day5Preload = function() {
   phaser.load.image('rabbit-hole', 'assets/day5/rabbithole.png');
 }

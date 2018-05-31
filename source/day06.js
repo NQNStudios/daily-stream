@@ -1,4 +1,4 @@
-window['sectionsVisited'] = {};
+window.sectionsVisited = {};
 
 Core.AddEventListener('OnGotoSection', function(id, element, tags, reason) {
   var result = false;
@@ -6,14 +6,14 @@ Core.AddEventListener('OnGotoSection', function(id, element, tags, reason) {
     result = Day6SeenAllCheck();
   }
 
-  window['sectionsVisited'][id] = true;
+  window.sectionsVisited[id] = true;
 
   // If we end up going to the final section, skip the other event listeners
   // because they'll add the wrong sprite
   if (result) return true;
 });
 
-function Day6Preload() {
+window.Day6Preload = function() {
   phaser.load.image('outline', 'assets/day6/outline.jpg');
   phaser.load.image('outlineDone', 'assets/day6/outlineDone.jpg');
   phaser.load.image('rc1', 'assets/day6/rc1.jpg');
@@ -24,7 +24,7 @@ function Day6Preload() {
   phaser.load.image('chemex', 'assets/day6/chemex.jpg');
 }
 
-function Day6PutOnHeadphones() {
+window.Day6PutOnHeadphones = function() {
   var muteThis = document.getElementById("muteThis");
 
   var text = muteThis.innerHTML;
@@ -48,7 +48,7 @@ function Day6PutOnHeadphones() {
   section.innerHTML += nextPart.innerHTML;
 }
 
-function Day6SeenAllCheck() {
+window.Day6SeenAllCheck = function() {
   var seenAll = true;
 
   var SectionsNeeded = [

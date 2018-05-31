@@ -1,7 +1,7 @@
 // Your Javascript goes here
 
 // Load assets every story needs
-function __preload() {
+window.__preload = function() {
   phaser.load.image('cover', 'assets/itch-cover.jpeg');
 }
 
@@ -31,7 +31,7 @@ Core.AddEventListener('OnGotoSection', function(id, element, tags, reason) {
   }
 });
 
-function Season2Links() {
+window.Season2Links = function() {
   // Generate HTML links to each section 
   // TODO this could be a lot nicer if Core provided link generator functions
   var list = "";

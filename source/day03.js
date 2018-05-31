@@ -1,10 +1,10 @@
-function Day3Preload() {
+window.Day3Preload = function() {
   phaser.load.image('gay-jesus', 'assets/gay-jesus.jpg');
   phaser.load.image('gay-street', 'assets/gay-street.jpg');
   phaser.load.image('christmas', 'assets/christmas.png');
 }
 
-function Day3Animation() {
+window.Day3Animation = function() {
   var animationTime = 4000;
 	var style = { font: "24px Arial", fill: "#ffffff", align: "left" };
   var thingsHeSaid = [
@@ -40,7 +40,7 @@ function Day3Animation() {
   setTimeout(Day3RevealNextLink, delay+animationTime);
 }
 
-function Day3RevealNextLink() {
+window.Day3RevealNextLink = function() {
   day2LightsOn();
   words.destroy();
   document.getElementById("__currentSection").innerHTML += Core.GetSection("Day3NextToReveal").innerHTML;

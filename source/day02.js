@@ -1,4 +1,4 @@
-function Day2Preload() {
+window.Day2Preload = function() {
   phaser.load.image('shower', 'assets/shower.png');
 }
 
@@ -15,14 +15,14 @@ Core.AddEventListener("OnGotoSection", function(sectionId, element, tags, reason
 
 });
 
-function day2just() {
+window.day2just = function() {
   document.getElementById("__currentSection").innerHTML += Core.GetSection("Day2-1").innerHTML;
 
   return "isn't <i>just</i>";
 }
 
 // TODO this could be a part of Fractive Core
-function changeCSS(cssFile) {
+window.changeCSS = function(cssFile) {
 
     var oldlink = document.getElementsByTagName("link").item(1);
 
@@ -34,10 +34,10 @@ function changeCSS(cssFile) {
     document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 }
 
-function day2LightsOut() {
+window.day2LightsOut = function() {
   changeCSS("assets/dark-style.css");
 }
 
-function day2LightsOn() {
+window.day2LightsOn = function() {
   changeCSS("assets/default-style.css");
 }

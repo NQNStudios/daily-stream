@@ -1,4 +1,4 @@
-function Day4Preload() {
+window.Day4Preload = function() {
   phaser.load.audio('dooropen', 'assets/day4/dooropen.wav');
   phaser.load.audio('faintmusic', 'assets/day4/faintmusic.wav');
   phaser.load.audio('monologue', 'assets/day4/monologue.wav');
@@ -12,32 +12,32 @@ function Day4Preload() {
   phaser.load.image('gay-jesus', 'assets/gay-jesus.jpg');
 }
 
-function Day4Reveal1() {
+window.Day4Reveal1 = function() {
   document.getElementById("__currentSection").innerHTML += Core.GetSection("Day4MinPt1").innerHTML;
 }
 
-function Day4Reveal2() {
+window.Day4Reveal2 = function() {
   document.getElementById("__currentSection").innerHTML += Core.GetSection("Day4MinPt2").innerHTML;
   return "check my mailbox (nothing)";
 }
 
-function Day4FaintMusic() {
+window.Day4FaintMusic = function() {
   phaser.sound.play('faintmusic');
 }
 
-function Day4Music1() {
+window.Day4Music1 = function() {
   phaser.sound.play('music1');
 }
 
-function Day4OpenDoor() {
+window.Day4OpenDoor = function() {
   phaser.sound.play('dooropen');
   phaser.sound.play('music2');
 }
 
-function Day4SoundsGood() {
+window.Day4SoundsGood = function() {
   phaser.sound.play('soundsgood')
 }
 
-function Day4PlayMonologue() {
+window.Day4PlayMonologue = function() {
   phaser.sound.play('monologue');
 }
