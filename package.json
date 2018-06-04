@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/NQNStudios/daily-stream#readme",
   "dependencies": {
+    "inkjs": "^1.6.0",
     "sillyname": "^0.1.0"
   }
 }
