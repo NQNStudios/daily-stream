@@ -879,7 +879,7 @@
                 ], {
                     "#f": 3
                 }],
-                "nothing": ["^So I'm trying to move Stream of Pretentiousness (and eventually Ballad of the Space Bard) to a new engine someone else wrote. Everything feels weird and I'm sad about it.", "\n", "^But it's the only way forward.", "\n", "end", {
+                "nothing": ["^So I'm trying to move Stream of Pretentiousness (and eventually Ballad of the Space Bard) to a new engine someone else wrote (Ink). Everything feels weird and I'm sad about it.", "\n", "^But it's the only way forward.", "\n", "end", {
                     "#f": 3
                 }],
                 "#f": 3
@@ -7738,6 +7738,10 @@
                 window['sprite'].destroy();
             }
 
+            if (tags.indexOf('Ink') == -1) {
+                document.getElementById("inkstory").innerHTML = "";
+            }
+
             var index = tags.indexOf('Sprite');
             var spriteKey = 'cover';
             if (index != -1) {
@@ -8082,7 +8086,7 @@
             <p>Sorry.</p>
         </div>
         <!-- source/day10.md -->
-        <div id="6/4/18" data-tags="S2" class="section" hidden="true">
+        <div id="6/4/18" data-tags="S2,Ink" class="section" hidden="true">
             <p><span data-expand-macro="#startDay10"></span></p>
         </div>
         <!-- source/menu.md -->

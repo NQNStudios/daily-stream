@@ -12,6 +12,10 @@ Core.AddEventListener('OnGotoSection', function(id, element, tags, reason) {
     window['sprite'].destroy();
   }
 
+  if (tags.indexOf('Ink') == -1) {
+    document.getElementById("inkstory").innerHTML = "";
+  }
+
   var index = tags.indexOf('Sprite');
   var spriteKey = 'cover';
   if (index != -1) {
